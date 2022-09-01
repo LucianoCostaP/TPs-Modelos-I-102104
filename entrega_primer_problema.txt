@@ -1,0 +1,27 @@
+Impresión del problema
+
+A priori, solo leyendo el enunciado y dado los conocimientos previos que tenía de materias anteriores, lo identifiqué enseguida como un problema de modelado de grafos. 
+A partir de allí resuelvo el problema, sin salir de esa óptica ni saber si podría llevarlo a cabo sumado a la ignorancia de saber el resultado del problema bajo ese modelo. Ahora la dificultad radica en recorrer un grafo de manera de allár una solución.
+
+Ideas de resolución del problema
+
+Como mencioné anteriormente se planteó un grafo donde cada vértice del mismo era un tipo de prenda y, tal como se encuentra dado el formato del archivo del problema, estas prendas se conectan según su incompatibilidad de lavado.
+Dado que se busca dividir cada prenda en distintos lavados (cada prenda compatible entre si), necesito, bajo esta lógica de grafos encontrar el complemento del grafo creado en primera instancia cuyo resultado sería la unión entre prendas compatibles entre sí.
+Cada arista tiene un peso que suma los tiempos de lavado de las prendas que se conectan. Esto es así ya que tiene el objetivo de juntar en el mismo lavado las que requieren mayor tiempo.
+Para lograr esto la idea es buscar las prendas con mayor tiempo combinados y guardarlas en un mismo lavado. Luego buscar otras que sean compatibles con ambas de mayor tiempo sucesivamente verificando que cada prenda que se añada al lavado sea compatible con todas las que ya están disponibles para el mismo.
+Una vez que se terminan las prendas que corresponden a ese lavado, se busca nuevamente aquellas ropas que tienen mayor tiempo combinado y se repite sucesivamente la lógica hasta quedarnos sin prendas.
+En caso de que queden prendas sueltas que no fueron asignadas a ningún lavado cada una pertenecerá a un lavado particular y así completar todos los lavados pedidos.
+Una vez tengo cada lavado formado se le asigna un número a cada uno y cada prenda se encontrará asociado a su correspondiente lavado.
+
+Cambios en el código
+
+Es el primer resultado obtenido, aunque es necesario remarcar que dentro de la resolución del problema se buscaron distintas variantes de resolverlo, con conceptos de teoría de grafos como coloreo (para diferenciar lavados) caminos máximos (para buscar el mayor tiempo posible a cada lavado) pero fueron descartados en beneficio de la solución planteada anteriormente por lo tanto ninguna de esas ideas arrojó un resultado concreto como para modificar en función de lo obtenido.
+
+Comentarios Finales
+
+El código se comprende de: 
+	Biblioteca de grafos que realiza operaciones particulares del mismo.
+	Un módulo donde se encuentran las funciones relacionadas específicamente con el TP en cuestión,
+	El grafo general con todas sus funciones necesarias (y más ya que es un código realizado anteriormente).
+	Una módulo principal donde se crea el archivo de la solución.
+	
