@@ -1,0 +1,22 @@
+Impresión del problema
+
+Resulta interesante tratar de mejorar el resultado obtenido, teniendo en cuenta que con los conocimientos previos, creí que esa solución era la mejor posible.
+El problema resulto medianamente fácil puesto que con respecto a la entrega anteror, lo que hice fue aplicar conocimientos previos sobre orden algorítmico para llevarlo, bajo una idea parecida, a que se realice en menos tiempo puesto que con el algoritmo anterior resultaba inacabable.
+
+Ideas de resolución del problema
+
+La idea fue nuevamente hacer un grafo pero guardando cada prenda en un heap de máximos cuyo primer elemento es siempre la prenda con mayor tiempo de lavado.
+Luego recorrer todas las prendas ordenadas de mayor a menor en cuanto a tiempos e ir agregandolas a los lavados de manera que las prendas de mayor tiempo tengan más posibilidades de ir juntas en un mismo lavado y así reducir el tiempo total.
+
+Cambios en el código
+
+Dado que el orden en que agrego las prendas al heap es siempre el mismo utilicé un random entre todas las prendas para agregarlas en distinto orden y ver cual combinación era la más adecuada (A medida que aumentan las prendas la cantidad de iteraciones baja debido al tiempo de ejecución que conlleva.
+
+Comentarios Finales
+
+El código se comprende de: 
+	Un heap de máximos.
+	Un módulo donde se encuentran las funciones relacionadas específicamente con el TP en cuestión.
+	El grafo general con todas sus funciones necesarias (y más ya que es un código realizado anteriormente).
+	Una módulo principal donde se crea el archivo de la solución.
+	
