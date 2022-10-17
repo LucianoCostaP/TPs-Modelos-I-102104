@@ -1,0 +1,19 @@
+Impresión del problema
+
+Esto supone un nuevo reto, ya que ahora empezamos a aplicar los temas de la materia a este ejercicio particular que venía trabajando anteriormente (en este caso programación lineal entera). Sobre la dificultad del problema, fue dificil cambiar el chip que tiene uno sobre la algoritmia que normalmente utiliza para pensar este tipo de problemas para transformarlo en uno de programación lineal entera. Una vez cambiado este chip la dificultad radicó en ver si el conjunto de las restricciones puestas se adecúan a la resolución de todo el problema.
+
+Ideas de resolución del problema
+
+La idea de resolución fue dividir el problema en tres partes:
+1: Incompatibilidades.
+2: Tiempo de cada lavado.
+3: Relacionar 1 y 2.
+Para las incompatibilidades la idea es crear una variable bivalente para determinar si la una prenda es incompatible con otra y asegurarme que no coincidan en cada lavado (para eso creé otra variable bivalente que indica si la prenda está o no en el lavado).
+Como el tiempo de cada lavado es el máximo de todos los tiempos del lavado hice que cada prenda de un lavado tenga asociada una variable bivalente que determine si es el tiempo máximo del lavado o no. Para ello se creó otra variable (MED) para que tome valor 1 si no es la prenda de tiempo máximo para no hacer un sistema incompatible para las prendas que están en el medio entre las prendas máximas y mínimas.
+Luego, como lo de máximos se hace para todas las prendas tengo que relacionarlas con la presencia de la prenda en el lavado por lo tanto para que tome valor máximo en ese lavado, la prenda debe estar en ese lavado, es decir, si Yik = 0 entonces el MAXik también lo será.
+Por último se agregaron las restricciones de que una prenda debe estar en un solo lavado y que todas las prendas deben estar en algun lavado.
+Todo con el objetivo de minimizar el tiempo de lavado (de allí el funcional) 
+
+Comentarios finales
+
+Aquí hay una duda que se me planteó haciendo este problema y es la cantidad de lavados que se hacen. Yo puse que se hagan el máximo de lavados posibles (Las N prendas) y que el modelo decida si que en algún lavado el tiempo sea cero es decir que no haya ninguna prenda en esos lavados y así mejora el tiempo, pero me quedó la duda de si abría que poner alguna restricción mas sobre eso o no.
